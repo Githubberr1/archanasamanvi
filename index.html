@@ -52,27 +52,36 @@
         .btn-gold { background: var(--gold-color); color: #111; }
         .btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
 
-        /* Legacy (Training & Lineage) */
+        /* Legacy Box */
         .legacy-box { background: var(--cream); padding: 40px; border-radius: 8px; width: 100%; max-width: 1000px; border-left: 5px solid var(--primary-color); text-align: left; }
         .legacy-box h3 { color: var(--primary-color); margin-bottom: 15px; font-size: 1.3rem; }
 
-        /* Detailed Biography Section */
+        /* Biography Section */
         .bio-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; width: 100%; max-width: 1200px; margin-top: 20px; }
         .bio-article { background: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); text-align: left; border: 1px solid #eee; }
-        .bio-article h3 { font-size: 1.5rem; color: var(--primary-color); margin-bottom: 10px; }
-        .bio-photo-wrap { width: 100%; height: 400px; overflow: hidden; margin-bottom: 25px; border-radius: 5px; }
+        .bio-article h3 { font-size: 1.4rem; color: var(--primary-color); margin-bottom: 10px; }
+        .bio-photo-wrap { width: 100%; height: 380px; overflow: hidden; margin-bottom: 25px; border-radius: 5px; border-bottom: 4px solid var(--gold-color); }
         .bio-photo-wrap img { width: 100%; height: 100%; object-fit: cover; }
         .bio-meta { display: flex; justify-content: space-between; font-size: 0.75rem; font-weight: 700; color: var(--gold-color); text-transform: uppercase; margin-bottom: 20px; border-bottom: 1px solid #f0f0f0; padding-bottom: 10px; }
         .bio-text p { font-size: 0.95rem; margin-bottom: 15px; color: #444; }
 
-        /* Repertoire Grid */
+        /* Projects Grid (Balanced Size) */
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; width: 100%; max-width: 1100px; margin-top: 10px; }
         .project-card { background: var(--cream); padding: 30px; border-radius: 8px; border: 1px solid #e0e0e0; transition: var(--transition); }
         .project-card:hover { border-color: var(--gold-color); background: #fff; transform: translateY(-5px); }
         .project-card i { font-size: 2rem; color: var(--primary-color); margin-bottom: 15px; }
-        .project-card h3 { font-size: 1.1rem; color: var(--primary-color); margin-bottom: 10px; }
+        .project-card h3 { font-size: 1rem; color: var(--primary-color); margin-bottom: 10px; text-transform: uppercase; }
+        .project-card p { font-size: 0.85rem; color: #555; }
 
-        /* Responsive Table */
+        /* Videos Section (Restored) */
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; width: 100%; max-width: 1100px; margin-top: 20px; }
+        .video-item { position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); display: block; }
+        .video-item img { width: 100%; display: block; transition: transform 0.4s; }
+        .video-item:hover img { transform: scale(1.05); }
+        .play-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.2); display: flex; justify-content: center; align-items: center; color: #fff; font-size: 3rem; opacity: 0.8; transition: var(--transition); }
+        .video-item:hover .play-overlay { background: rgba(0,0,0,0.4); opacity: 1; }
+
+        /* Concert Table Responsive */
         .table-container { width: 100%; overflow-x: auto; margin-top: 20px; border-radius: 8px; border: 1px solid #eee; }
         .concert-table { width: 100%; min-width: 700px; border-collapse: collapse; text-align: left; background: #fff; }
         .concert-table th { background: var(--primary-color); color: #fff; padding: 15px; font-size: 0.8rem; text-transform: uppercase; }
@@ -81,21 +90,25 @@
 
         /* Contact Details */
         .contact-flex { display: flex; flex-wrap: wrap; gap: 30px; width: 100%; max-width: 1100px; text-align: left; }
-        .contact-box { flex: 1; min-width: 320px; background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); }
+        .contact-box { flex: 1; min-width: 320px; background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); border: 1px solid #eee; }
         .info-item { display: flex; align-items: center; margin-bottom: 20px; }
         .info-item i { width: 40px; height: 40px; background: var(--cream); color: var(--primary-color); display: flex; justify-content: center; align-items: center; border-radius: 50%; margin-right: 15px; }
+        .social-icons { margin-top: 25px; display: flex; gap: 15px; }
+        .social-icons a { font-size: 1.5rem; color: var(--primary-color); transition: var(--transition); }
+        .social-icons a:hover { color: var(--gold-color); transform: translateY(-5px); }
 
         footer { background: var(--dark-bg); color: #777; padding: 40px; font-size: 0.8rem; text-align: center; border-top: 3px solid var(--gold-color); }
 
         /* --- MOBILE RESPONSIVE --- */
         @media (max-width: 900px) {
             .bio-container { grid-template-columns: 1fr; }
-            .bio-photo-wrap { height: 350px; }
+            .bio-photo-wrap { height: 320px; }
             .hero h1 { font-size: 2.2rem; }
             .nav-links { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: #1A1A1A; flex-direction: column; padding: 20px; }
             .nav-links.active { display: flex; }
             .nav-links li { margin: 15px 0; }
             .menu-toggle { display: block; }
+            section { padding: 60px 6%; }
         }
     </style>
 </head>
@@ -108,7 +121,9 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#legacy">Legacy</a></li>
             <li><a href="#bio">Biography</a></li>
+            <li><a href="#projects">Repertoire</a></li>
             <li><a href="#concerts">Concerts</a></li>
+            <li><a href="#videos">Performances</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </header>
@@ -116,57 +131,55 @@
     <section id="home" class="hero">
         <p>A-Graded Artistes of All India Radio</p>
         <h1>The Lathangi Sisters</h1>
-        <p>A Global Identity in Carnatic Music | Scholars & Performers</p>
+        <p>A Harmonious Blend of Youthful Dynamism & Scholarly Depth</p>
         <div class="btn-group" style="display:flex; gap:15px; flex-wrap:wrap; justify-content:center;">
-            <a href="#concerts" class="btn btn-gold">View Schedule</a>
+            <a href="#concerts" class="btn btn-gold">Upcoming Concerts</a>
             <a href="Lathangi Sisters profile.pdf" download class="btn btn-maroon"><i class="fas fa-file-pdf"></i> Download Profile</a>
         </div>
     </section>
 
     <section id="legacy">
         <h2 class="section-title">Musical Legacy</h2>
-        <p class="section-intro">Based in the cultural hub of Udupi, the Lathangi Sisters embody a rare synthesis of traditional Gurukula values and modern scholarly research.</p>
-        
         <div class="legacy-box">
             <h3>The Lineage of Lathangi</h3>
-            <p>Their journey began in 2008 at the renowned <strong>"Lathangi"</strong> house in Udupi, under the tutelage of <strong>Vid. Vasanthalakshmi Hebbar</strong> and <strong>Dr. V. Aravinda Hebbar</strong>. This early immersion in a musical household provided them with a foundation in the classic Gurukula vasa tradition.</p>
+            <p>The journey of the Lathangi Sisters began in 2008 at the renowned <strong>"Lathangi"</strong> house in Udupi, under the mentorship of <strong>Vid. Vasanthalakshmi Hebbar</strong> and <strong>Dr. V. Aravinda Hebbar</strong>. This foundation in the traditional Gurukula vasa environment provided the bedrock for their synchronized vocal artistry.</p>
             <br>
-            <p>A transformative milestone occurred in 2015 when they were accepted as disciples by the legendary maestro <strong>Chitravina N. Ravikiran</strong>. Under his scholarly guidance, their music has evolved to include complex rhythmic structures and profound raga explorations, making them a unique duo in the contemporary Carnatic landscape.</p>
+            <p>A pivotal transformation occurred in 2015 when they were accepted as disciples by the internationally acclaimed maestro <strong>Chitravina N. Ravikiran</strong>. Under his scholarly guidance, their repertoire has expanded to include advanced rhythmic concepts and rare compositions, establishing them as a prominent duo in the global Carnatic fraternity.</p>
         </div>
     </section>
 
     <section id="bio" style="background: var(--cream);">
         <h2 class="section-title">Detailed Biography</h2>
-        <p class="section-intro">While not filial sisters, their synchronized artistry and shared academic discipline have created a powerful musical identity.</p>
+        <p class="section-intro">Equal partners in music and scholarship, Archana and Samanvi represent the new age of Carnatic vocalists.</p>
 
         <div class="bio-container">
             <article class="bio-article">
                 <div class="bio-photo-wrap">
-                    <img src="archana_photo.jpg" alt="Archana Upadhyaya">
+                    <img src="archana_photo.jpg" alt="Vidushi Archana Upadhyaya">
                 </div>
                 <div class="bio-meta">
-                    <span>MSc Physics</span>
+                    <span>MSc Physics (Madras Univ)</span>
                     <span>AIR "A" Grade</span>
                 </div>
-                <h3>Archana Upadhyaya</h3>
+                <h3>Vidushi Archana Upadhyaya</h3>
                 <div class="bio-text">
-                    <p>Archana's musical journey is a testament to the balance between scientific discipline and artistic soul. As an MSc graduate in Physics from Madras University, she brings a methodical depth to her performances. Her voice is characterized by its stability, resonant depth, and the ability to navigate the intricacies of traditional Carnatic ragas with meditative ease.</p>
-                    <p>Recognized as an "A" graded artist of All India Radio, Archana has been a pivotal force in the duo’s rise. She has performed extensively at prestigious venues across India and was a key part of their successful maiden US tour in 2025, performing at the Cleveland Thyagaraja Festival. Her dedication to the Haridasa tradition is reflected in her significant contributions to the Daasaarchane recording project.</p>
+                    <p>Archana Upadhyaya's musical style is marked by meditative raga exploration and a voice of remarkable depth. A graduate in MSc Physics, she brings a disciplined, intellectual approach to the Gurukula tradition she has followed since 2008. As an "A" graded artist of All India Radio, she has performed in major venues across India and internationally.</p>
+                    <p>Archana was a central figure in the duo's 2025 maiden US tour, where they captivated audiences at the Cleveland Thyagaraja Festival. Her commitment to the spiritual Haridasa tradition led to her major role in the Daasaarchane project, where she helped record over 100 rare compositions to preserve them for future generations.</p>
                 </div>
             </article>
 
             <article class="bio-article">
                 <div class="bio-photo-wrap">
-                    <img src="samanvi_photo.jpg" alt="Vidushi Samanvi">
+                    <img src="samanvi_photo.jpg" alt="Vidushi P. Samanvi">
                 </div>
                 <div class="bio-meta">
-                    <span>MA Music</span>
+                    <span>MA Music (Madras Univ)</span>
                     <span>AIR "A" Grade</span>
                 </div>
                 <h3>Vidushi P. Samanvi</h3>
                 <div class="bio-text">
-                    <p>Samanvi is widely regarded as one of the most promising vocalists of her generation. Currently pursuing her MA in Music at Madras University, she possesses a nimble, expressive voice capable of remarkable rhythmic precision. In 2022, she was honored with the prestigious "MS Subbulakshmi Voice of the Year" award by The Hindu, a recognition that solidified her standing in the fraternity.</p>
-                    <p>As a direct "A" grade artist of AIR, Samanvi’s technical brilliance and creative manodharma complement the duo’s synchronized sound. She is a recipient of the MS Subbulakshmi Fellowship and the Mani Krishnaswamy Award. Her scholarly curiosity led her to co-author "Keerthanas of Karnataka," showcasing her commitment to documenting and preserving the region's rich musical heritage alongside her performance career.</p>
+                    <p>Samanvi is celebrated for her technical brilliance and rhythmic precision. Currently pursuing her MA in Music at Madras University, she was honored with the prestigious <strong>"MS Subbulakshmi Voice of the Year"</strong> award in 2022 by The Hindu. As a direct "A" grade artist of AIR, her performances are known for their nimble phrasing and creative manodharma.</p>
+                    <p>Beyond performance, Samanvi is a dedicated scholar. She co-authored the book <i>Keerthanas of Karnataka</i> in 2018, documenting rare regional compositions. Her ability to bridge the gap between rigorous performance and scholarly documentation has made her a unique voice in the contemporary Carnatic landscape.</p>
                 </div>
             </article>
         </div>
@@ -176,24 +189,42 @@
         <h2 class="section-title">Repertoire & Projects</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <i class="fas fa-feather-alt"></i>
-                <h3>Literary Contributions</h3>
-                <p>Co-authored Keerthanas of Karnataka (2018), a scholarly volume documenting rare compositions and their notations.</p>
+                <i class="fas fa-book-open"></i>
+                <h3>Keerthanas of Karnataka</h3>
+                <p>A co-authored publication (2018) documenting rare compositions with notations, ensuring the legacy of Karnataka's musical heritage.</p>
             </div>
             <div class="project-card">
-                <i class="fas fa-microphone-lines"></i>
-                <h3>Daasaarchane</h3>
-                <p>Recorded 101 compositions of various Haridasas, celebrating the spiritual depth of the Dasa Sahitya tradition.</p>
+                <i class="fas fa-compact-disc"></i>
+                <h3>Daasaarchane Project</h3>
+                <p>A landmark recording of 101 Dasa compositions, celebrating the spiritual depth and melodic diversity of the Haridasa tradition.</p>
             </div>
             <div class="project-card">
-                <i class="fas fa-lightbulb"></i>
-                <h3>Lecture-Demos</h3>
-                <p>Presenting advanced demonstrations on concepts like Grahabhedhas (Modal shift of tonic) at major music academies.</p>
+                <i class="fas fa-brain"></i>
+                <h3>Grahabhedhas</h3>
+                <p>Presenting advanced lecture-demonstrations on complex concepts like modal shift of tonic, bridging the gap between art and theory.</p>
             </div>
         </div>
     </section>
 
-    <section id="concerts" style="background: var(--cream);">
+    <section id="videos" style="background: var(--cream);">
+        <h2 class="section-title">Performances</h2>
+        <div class="video-grid">
+            <a href="https://youtu.be/6_NBCzCZAvM" target="_blank" class="video-item">
+                <img src="https://img.youtube.com/vi/6_NBCzCZAvM/maxresdefault.jpg" alt="Lathangi Sisters Performance">
+                <div class="play-overlay"><i class="fab fa-youtube"></i></div>
+            </a>
+            <a href="https://youtu.be/WcdfN2BazOU" target="_blank" class="video-item">
+                <img src="https://img.youtube.com/vi/WcdfN2BazOU/maxresdefault.jpg" alt="Lathangi Sisters Performance">
+                <div class="play-overlay"><i class="fab fa-youtube"></i></div>
+            </a>
+            <a href="https://youtu.be/UrBhXAS5Gz0" target="_blank" class="video-item">
+                <img src="https://img.youtube.com/vi/UrBhXAS5Gz0/maxresdefault.jpg" alt="Lathangi Sisters Performance">
+                <div class="play-overlay"><i class="fab fa-youtube"></i></div>
+            </a>
+        </div>
+    </section>
+
+    <section id="concerts">
         <h2 class="section-title">Concert Schedule</h2>
         <div class="table-container">
             <table class="concert-table">
@@ -221,11 +252,11 @@
         </div>
     </section>
 
-    <section id="contact">
-        <h2 class="section-title">Get in Touch</h2>
+    <section id="contact" style="background: #f4f4f4;">
+        <h2 class="section-title">Booking & Contact</h2>
         <div class="contact-flex">
             <div class="contact-box">
-                <h3>Global Bookings</h3>
+                <h3>Global Management</h3>
                 <div class="info-item"><i class="fas fa-envelope"></i> archanasamanvi@gmail.com</div>
                 <div class="info-item"><i class="fas fa-phone"></i> +91 9980167938 (Prof. A. Hebbar)</div>
                 <div class="info-item"><i class="fas fa-phone"></i> +91 9482821516 (Archana)</div>
@@ -237,33 +268,9 @@
             </div>
             
             <form class="contact-box">
-                <h3 style="margin-bottom:20px;">Send a Message</h3>
-                <input type="text" placeholder="Name" style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ddd;">
-                <input type="email" placeholder="Email" style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ddd;">
-                <textarea rows="4" placeholder="Message" style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ddd;"></textarea>
-                <button type="submit" class="btn btn-maroon" style="width:100%; cursor:pointer;">Send Inquiry</button>
+                <h3 style="margin-bottom:20px;">Send an Inquiry</h3>
+                <input type="text" placeholder="Name" style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ddd; border-radius:4px;">
+                <input type="email" placeholder="Email" style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ddd; border-radius:4px;">
+                <textarea rows="4" placeholder="Your Message" style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ddd; border-radius:4px;"></textarea>
+                <button type="submit" class="btn btn-maroon" style="width:100%; cursor:pointer; border:none;">Send Message</button>
             </form>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Archana & Samanvi | The Lathangi Sisters. All Rights Reserved.</p>
-    </footer>
-
-    <script>
-        // Menu Toggle
-        const menuToggle = document.getElementById('mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-        menuToggle.addEventListener('click', () => { navLinks.classList.toggle('active'); });
-
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                window.scrollTo({ top: target.offsetTop - 60, behavior: 'smooth' });
-            });
-        });
-    </script>
-</body>
-</html>
