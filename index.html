@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Archana & Samanvi | The Lathangi Sisters - Carnatic Vocal Duo</title>
-    <meta name="description" content="Official website of the Lathangi Sisters, Archana Upadhyaya and Samanvi. Celebrated Carnatic classical vocal duo from Udupi known for their soulful concerts.">
-    <meta name="keywords" content="Archana Upadhyaya, Samanvi, Lathangi Sisters, Latangi Sisters, Lathangi, Latangi, Ranjani Memorial Trust,Ranjini Hebbar,Aravinda Hebbar, Aravind hebbar, Carnatic Music, Vocal Duo, Indian Classical Music, Udupi, Daasaarchane, Archana Samanvi">
+    <meta name="description" content="Official website of the Lathangi Sisters, Archana Upadhyaya and Samanvi. Celebrated Carnatic classical vocal duo from Udupi known for their scholarly depth, Daasaarchane project, and soulful concerts.">
+    <meta name="keywords" content="Archana Upadhyaya, Samanvi, Lathangi Sisters, Latangi Sisters, Lathangi, Latangi,ranjani memorial trust,Ranjini Hebbar,Aravinda Hebbar, Aravind hebbar, Carnatic Music, Vocal Duo, Indian Classical Music, Udupi, Daasaarchane, Archana Samanvi">
     <meta name="author" content="The Lathangi Sisters">
     <meta name="robots" content="index, follow">
 
     <meta property="og:title" content="Archana & Samanvi | The Lathangi Sisters">
-    <meta property="og: description" content=" Celebrated Carnatic vocalists blending youthful dynamism with scholarly depth. Explore concerts, projects, and media.">
+    <meta property="og:description" content="Celebrated Carnatic vocalists blending youthful dynamism with scholarly depth. Explore concerts, projects, and media.">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="The Lathangi Sisters">
+    <meta property="og:image" content="logo.png">
 
     <script type="application/ld+json">
     {
@@ -21,6 +22,8 @@
       "@type": "MusicGroup",
       "name": "The Lathangi Sisters",
       "alternateName": ["Archana & Samanvi", "Latangi Sisters"],
+      "logo": "logo.png",
+      "image": "logo.png",
       "genre": "Carnatic Classical Music",
       "member": [
         {
@@ -41,6 +44,7 @@
       "description": "Archana Upadhyaya and Samanvi, known as the Lathangi Sisters, are celebrated Carnatic vocalists whose artistry blends youthful dynamism with scholarly depth."
     }
     </script>
+    
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
@@ -57,7 +61,7 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Montserrat', sans-serif; line-height: 1.7; color: #333; scroll-behavior: smooth; background: var(--light-bg); overflow-x: hidden; }
-        h1, h2, h3, .logo { font-family: 'Cinzel', serif; letter-spacing: 1px; }
+        h1, h2, h3, .logo-text { font-family: 'Cinzel', serif; letter-spacing: 1px; }
 
         /* Navigation */
         #navbar {
@@ -65,7 +69,12 @@
             align-items: center; padding: 12px 5%; background: rgba(26, 26, 26, 0.98);
             z-index: 2000; box-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
-        .logo { color: var(--gold-color); font-size: 1.1rem; font-weight: 700; text-decoration: none; }
+
+        /* Logo Styling */
+        .logo-container { display: flex; align-items: center; text-decoration: none; }
+        .logo-img { height: 50px; width: auto; margin-right: 15px; } /* Adjustable Height */
+        .logo-text { color: var(--gold-color); font-size: 1.1rem; font-weight: 700; }
+
         .nav-links { display: flex; list-style: none; }
         .nav-links li { margin-left: 20px; }
         .nav-links a { color: #fff; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; transition: var(--transition); }
@@ -171,6 +180,8 @@
             /* On mobile, switch grid to 1 column so cards stack nicely */
             .projects-grid { grid-template-columns: 1fr; }
             
+            /* Navbar Mobile Fix */
+            .logo-img { height: 40px; }
             .nav-links { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: #1A1A1A; flex-direction: column; padding: 20px; }
             .nav-links.active { display: flex; }
             .nav-links li { margin: 15px 0; margin-left: 0; }
@@ -182,7 +193,11 @@
 <body>
 
     <header id="navbar">
-        <a href="#home" class="logo">Archana & Samanvi</a>
+        <a href="#home" class="logo-container">
+            <img src="logo.png" alt="Archana & Samanvi Logo" class="logo-img">
+            <span class="logo-text">Archana & Samanvi</span>
+        </a>
+
         <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
@@ -347,5 +362,3 @@
     </script>
 </body>
 </html>
-
-
